@@ -168,7 +168,10 @@ client.on('message_create', (message) => {
             }
             console.log('Adding user');
 
-            let qrData = message.body.split(' ')[2];
+            let qrData = message.body
+                .split(' ')
+                .slice(2, message.body.length)
+                .join('');
             console.log('QR Data: ' + qrData);
             if (
                 users.find((user) => user.user === message.from) !== undefined

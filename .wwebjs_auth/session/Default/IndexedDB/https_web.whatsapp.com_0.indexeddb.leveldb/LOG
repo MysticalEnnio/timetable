@@ -1,3 +1,15 @@
-2024/03/13-12:37:37.125 1fd0f Reusing MANIFEST /Users/enniomarke/Documents/dev/nodejs/timetable/.wwebjs_auth/session/Default/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
-2024/03/13-12:37:37.125 1fd0f Recovering log #222
-2024/03/13-12:37:37.151 1fd0f Reusing old log /Users/enniomarke/Documents/dev/nodejs/timetable/.wwebjs_auth/session/Default/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/000222.log 
+2024/03/13-20:29:52.416 b203 Reusing MANIFEST /Users/enniomarke/Documents/dev/nodejs/timetable/.wwebjs_auth/session/Default/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
+2024/03/13-20:29:52.416 b203 Recovering log #222
+2024/03/13-20:29:52.495 b203 Reusing old log /Users/enniomarke/Documents/dev/nodejs/timetable/.wwebjs_auth/session/Default/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/000222.log 
+2024/03/13-20:30:05.942 9e03 Level-0 table #232: started
+2024/03/13-20:30:05.961 9e03 Level-0 table #232: 1133193 bytes OK
+2024/03/13-20:30:05.971 9e03 Delete type=0 #222
+2024/03/13-20:30:06.512 8203 Compacting 1@1 + 6@2 files
+2024/03/13-20:30:06.575 8203 Generated table #233@1: 69734 keys, 2254954 bytes
+2024/03/13-20:30:06.598 8203 Generated table #234@1: 11260 keys, 2161598 bytes
+2024/03/13-20:30:06.618 8203 Generated table #235@1: 3946 keys, 2158260 bytes
+2024/03/13-20:30:06.665 8203 Generated table #236@1: 30374 keys, 2251097 bytes
+2024/03/13-20:30:06.709 8203 Generated table #237@1: 61583 keys, 2199533 bytes
+2024/03/13-20:30:06.757 8203 Generated table #238@1: 72964 keys, 1657549 bytes
+2024/03/13-20:30:06.757 8203 Compacted 1@1 + 6@2 files => 12682991 bytes
+2024/03/13-20:30:06.765 8203 compacted to: files[ 0 0 6 0 0 0 0 ]
