@@ -127,7 +127,7 @@ async function messageUserTT(dateShift, scheduled = false, user) {
     if (user != undefined) {
         sendTT(user);
     } else {
-        users.map(sendTT(e));
+        users.map((e) => sendTT(e));
     }
 }
 
