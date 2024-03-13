@@ -10,7 +10,10 @@ import fs from 'fs';
 // Create a new client instance
 const client = new Client({
     authStrategy: new LocalAuth(),
-    puppeteer: ['--no-sandbox'],
+    //no sandbox puppeteer
+    puppeteer: {
+        args: ['--no-sandbox'],
+    },
 });
 
 const sjTimes = new Map([
