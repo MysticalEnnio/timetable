@@ -171,7 +171,7 @@ client.on('message_create', (message) => {
             let qrData = message.body
                 .split(' ')
                 .slice(2, message.body.length)
-                .join('');
+                .join(' ');
             console.log('QR Data: ' + qrData);
             if (
                 users.find((user) => user.user === message.from) !== undefined
