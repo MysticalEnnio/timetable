@@ -1,0 +1,22 @@
+2024/03/13-11:39:29.130 f203 Reusing MANIFEST /Users/enniomarke/Documents/dev/nodejs/timetable/.wwebjs_auth/session/Default/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
+2024/03/13-11:39:29.132 f203 Recovering log #213
+2024/03/13-11:39:29.204 f203 Reusing old log /Users/enniomarke/Documents/dev/nodejs/timetable/.wwebjs_auth/session/Default/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/000213.log 
+2024/03/13-11:39:46.896 15d03 Level-0 table #223: started
+2024/03/13-11:39:46.923 15d03 Level-0 table #223: 1165817 bytes OK
+2024/03/13-11:39:46.935 15d03 Delete type=0 #213
+2024/03/13-11:39:47.087 1ee0b Compacting 1@1 + 6@2 files
+2024/03/13-11:39:47.148 1ee0b Generated table #224@1: 67647 keys, 2251825 bytes
+2024/03/13-11:39:47.172 1ee0b Generated table #225@1: 10509 keys, 2161388 bytes
+2024/03/13-11:39:47.194 1ee0b Generated table #226@1: 5501 keys, 2161263 bytes
+2024/03/13-11:39:47.239 1ee0b Generated table #227@1: 28999 keys, 2246721 bytes
+2024/03/13-11:39:47.286 1ee0b Generated table #228@1: 65498 keys, 2206613 bytes
+2024/03/13-11:39:47.329 1ee0b Generated table #229@1: 68210 keys, 1549303 bytes
+2024/03/13-11:39:47.329 1ee0b Compacted 1@1 + 6@2 files => 12577113 bytes
+2024/03/13-11:39:47.339 1ee0b compacted to: files[ 0 0 6 0 0 0 0 ]
+2024/03/13-11:39:47.340 1ee0b Delete type=2 #217
+2024/03/13-11:39:47.340 1ee0b Delete type=2 #216
+2024/03/13-11:39:47.340 1ee0b Delete type=2 #215
+2024/03/13-11:39:47.340 1ee0b Delete type=2 #223
+2024/03/13-11:39:47.340 1ee0b Delete type=2 #220
+2024/03/13-11:39:47.340 1ee0b Delete type=2 #218
+2024/03/13-11:39:47.340 1ee0b Delete type=2 #219
