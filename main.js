@@ -153,6 +153,8 @@ client.on('qr', (qr) => {
     qrcode.generate(qr, { small: true });
 });
 client.on('message_create', (message) => {
+    message.body = message.body.toLowerCase();
+
     console.log(`Received message from ${message.from}: ${message.body}`);
     if (message.body.startsWith('!wu')) {
         let command = message.body.split(' ')[1];
@@ -214,6 +216,21 @@ client.on('message_create', (message) => {
             }
             messageUserTT(dateShift, 0, user);
         }
+    } else if (message.body.trim() == 'untis') {
+        console.log('Getting timetable...');
+        let dateShift = 1;
+        console.log('Date Shift: ' + dateShift);
+        let user = users.find((user) => user.user === message.from);
+        console.log('User: ' + JSON.stringify(user));
+        if (user == undefined) {
+            console.log('User does not exist');
+            client.sendMessage(
+                message.from,
+                'Du hast noch keinen QR Code hinzugefügt. Bitte füge einen hinzu.'
+            );
+            return;
+        }
+        messageUserTT(dateShift, 0, user);
     }
 });
 console.log('Initializing wa client...');
