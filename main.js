@@ -6,6 +6,8 @@ const { Client, LocalAuth } = waw;
 import qrcode from 'qrcode-terminal';
 import cron from 'node-cron';
 import fs from 'fs';
+import minimist from 'minimist';
+const argv = minimist(process.argv.slice(2));
 
 // Create a new client instance
 const client = new Client({
@@ -134,7 +136,7 @@ async function messageUserTT(dateShift, scheduled = false, user) {
 client.on('ready', () => {
     console.log('Client is ready!');
     cron.schedule(
-        '0 18 * * *',
+        `${argv.tm ?? 0} ${argv.th ?? 18} * * *`,
         () => {
             try {
                 messageUsersTT(1, 1);
