@@ -140,11 +140,24 @@ async function messageUserTT(dateShift, scheduled = false, user) {
 
 client.on('ready', () => {
     console.log('Client is ready!');
+    console.log('argumets: ' + JSON.stringify(argv));
+    let cronStr = `* * * * *`;
+    if (argv.t == true) {
+        console.log('Specific time set');
+        cronStr = `${argv.m ?? 0} ${argv.h ?? 18} * * *`;
+    } else {
+        console.log('Default time set');
+        cronStr = `0 18 * * *`;
+    }
+    if (!cron.validate(cronStr)) {
+        console.log('Invalid cron expression');
+        return;
+    }
     cron.schedule(
-        `${argv.tm ?? 0} ${argv.th ?? 18} * * *`,
+        cronStr,
         () => {
             try {
-                messageUsersTT(1, 1);
+                messageUserTT(1, 1);
             } catch (e) {
                 console.log(e);
             }
