@@ -87,7 +87,7 @@ async function messageUserTT(dateShift, scheduled = false, user) {
             //console.log(activity);
 
             if (activity.activityType === 'Unterricht') {
-                if (activity.te[0].name == '---') {
+                if (activity.code == 'cancelled') {
                     ausfallNum++;
                     client.sendMessage(
                         user.user,
