@@ -167,6 +167,12 @@ client.on('ready', () => {
             timezone: 'Europe/Berlin',
         }
     );
+    if (argv.test == true) {
+        console.log('Test mode enabled');
+        messageUserTT(0);
+        messageUserTT(1);
+        messageUserTT(2);
+    }
 });
 client.on('qr', (qr) => {
     console.log('Wa client is ready to scan QR Code!');
