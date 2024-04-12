@@ -91,10 +91,18 @@ async function messageUserTT(dateShift, scheduled = false, user) {
                     ausfallNum++;
                     client.sendMessage(
                         user.user,
-                        `${dateShiftName} ${activity.su[0].longname} Ausfall`
+                        `${dateShiftName} ${
+                            activity.su[0].longname
+                        } Ausfall in der ${
+                            sjTimes.get(activity.startTime).num
+                        }. Stunde`
                     );
                     console.log(
-                        `${dateShiftName} ${activity.su[0].longname} Ausfall`
+                        `${dateShiftName} ${
+                            activity.su[0].longname
+                        } Ausfall in der ${
+                            sjTimes.get(activity.startTime).num
+                        }. Stunde`
                     );
                 }
                 if (activity.te[0].orgid) {
