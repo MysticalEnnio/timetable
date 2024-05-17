@@ -1,0 +1,435 @@
+[
+    {
+        "id": 1955050,
+        "date": 20240429,
+        "startTime": 740,
+        "endTime": 825,
+        "code": "cancelled",
+        "kl": [
+            {
+                "id": 2507,
+                "name": "08ku",
+                "longname": "Klasse 08ku"
+            }
+        ],
+        "te": [
+            {
+                "id": 111,
+                "name": "Büh",
+                "longname": "Bührig"
+            }
+        ],
+        "su": [
+            {
+                "id": 5,
+                "name": "DE",
+                "longname": "Deutsch"
+            }
+        ],
+        "ro": [
+            {
+                "id": 160,
+                "name": "120",
+                "longname": "120 KR"
+            }
+        ],
+        "lsnumber": 73100,
+        "activityType": "Unterricht"
+    },
+    {
+        "id": 1955055,
+        "date": 20240429,
+        "startTime": 830,
+        "endTime": 915,
+        "code": "cancelled",
+        "kl": [
+            {
+                "id": 2507,
+                "name": "08ku",
+                "longname": "Klasse 08ku"
+            }
+        ],
+        "te": [
+            {
+                "id": 111,
+                "name": "Büh",
+                "longname": "Bührig"
+            }
+        ],
+        "su": [
+            {
+                "id": 5,
+                "name": "DE",
+                "longname": "Deutsch"
+            }
+        ],
+        "ro": [
+            {
+                "id": 160,
+                "name": "120",
+                "longname": "120 KR"
+            }
+        ],
+        "lsnumber": 73100,
+        "substText": "PU",
+        "activityType": "Unterricht"
+    },
+    {
+        "id": 2046643,
+        "date": 20240429,
+        "startTime": 830,
+        "endTime": 915,
+        "code": "irregular",
+        "kl": [
+            {
+                "id": 2507,
+                "name": "08ku",
+                "longname": "Klasse 08ku"
+            }
+        ],
+        "te": [
+            {
+                "id": 1008,
+                "name": "Kcz",
+                "longname": "Kaczmarek"
+            }
+        ],
+        "su": [
+            {
+                "id": 10,
+                "name": "EN",
+                "longname": "Englisch"
+            }
+        ],
+        "ro": [
+            {
+                "id": 150,
+                "name": "118",
+                "longname": "118 KR",
+                "orgid": 160,
+                "orgname": "120"
+            }
+        ],
+        "lsnumber": 73200,
+        "substText": "PU",
+        "activityType": "Unterricht"
+    },
+    {
+        "id": 2047377,
+        "date": 20240429,
+        "startTime": 1130,
+        "endTime": 1215,
+        "code": "irregular",
+        "kl": [
+            {
+                "id": 2507,
+                "name": "08ku",
+                "longname": "Klasse 08ku"
+            }
+        ],
+        "te": [
+            {
+                "id": 91,
+                "name": "Brü",
+                "longname": "Brüning"
+            }
+        ],
+        "su": [
+            {
+                "id": 40,
+                "name": "MU",
+                "longname": "Musik"
+            }
+        ],
+        "ro": [
+            {
+                "id": 315,
+                "name": "S022",
+                "longname": "Musik 3",
+                "orgid": 515,
+                "orgname": "N24a"
+            }
+        ],
+        "lstext": "2. HJ",
+        "lsnumber": 73300,
+        "substText": "statt Fr 5/6",
+        "activityType": "Unterricht"
+    },
+    {
+        "id": 2047372,
+        "date": 20240429,
+        "startTime": 1220,
+        "endTime": 1305,
+        "code": "irregular",
+        "kl": [
+            {
+                "id": 2507,
+                "name": "08ku",
+                "longname": "Klasse 08ku"
+            }
+        ],
+        "te": [
+            {
+                "id": 91,
+                "name": "Brü",
+                "longname": "Brüning"
+            }
+        ],
+        "su": [
+            {
+                "id": 40,
+                "name": "MU",
+                "longname": "Musik"
+            }
+        ],
+        "ro": [
+            {
+                "id": 315,
+                "name": "S022",
+                "longname": "Musik 3",
+                "orgid": 515,
+                "orgname": "N24a"
+            }
+        ],
+        "lstext": "2. HJ",
+        "lsnumber": 73300,
+        "substText": "statt Fr 5/6",
+        "activityType": "Unterricht"
+    },
+    {
+        "id": 2040409,
+        "date": 20240429,
+        "startTime": 1350,
+        "endTime": 1435,
+        "code": "cancelled",
+        "kl": [
+            {
+                "id": 2507,
+                "name": "08ku",
+                "longname": "Klasse 08ku"
+            }
+        ],
+        "te": [
+            {
+                "id": 301,
+                "name": "Mal",
+                "longname": "Malkowski"
+            }
+        ],
+        "su": [
+            {
+                "id": 85,
+                "name": "PHY",
+                "longname": "Physik"
+            }
+        ],
+        "ro": [
+            {
+                "id": 325,
+                "name": "S121",
+                "longname": "Physik 2"
+            }
+        ],
+        "lsnumber": 74100,
+        "substText": "verschoben auf Fr 5/6",
+        "activityType": "Unterricht"
+    },
+    {
+        "id": 2040414,
+        "date": 20240429,
+        "startTime": 1435,
+        "endTime": 1520,
+        "code": "cancelled",
+        "kl": [
+            {
+                "id": 2507,
+                "name": "08ku",
+                "longname": "Klasse 08ku"
+            }
+        ],
+        "te": [
+            {
+                "id": 301,
+                "name": "Mal",
+                "longname": "Malkowski"
+            }
+        ],
+        "su": [
+            {
+                "id": 85,
+                "name": "PHY",
+                "longname": "Physik"
+            }
+        ],
+        "ro": [
+            {
+                "id": 325,
+                "name": "S121",
+                "longname": "Physik 2"
+            }
+        ],
+        "lsnumber": 74100,
+        "substText": "verschoben auf Fr 5/6",
+        "activityType": "Unterricht"
+    },
+    {
+        "id": 2009380,
+        "date": 20240429,
+        "startTime": 1130,
+        "endTime": 1215,
+        "code": "cancelled",
+        "kl": [
+            {
+                "id": 2507,
+                "name": "08ku",
+                "longname": "Klasse 08ku"
+            }
+        ],
+        "te": [
+            {
+                "id": 111,
+                "name": "Büh",
+                "longname": "Bührig"
+            }
+        ],
+        "su": [
+            {
+                "id": 461,
+                "name": "DS-P",
+                "longname": "DS-Profilunterricht"
+            }
+        ],
+        "ro": [
+            {
+                "id": 515,
+                "name": "N24a",
+                "longname": "DS-Raum"
+            }
+        ],
+        "lsnumber": 353800,
+        "substText": "statt Fr 5/6",
+        "activityType": "Unterricht"
+    },
+    {
+        "id": 2009385,
+        "date": 20240429,
+        "startTime": 1220,
+        "endTime": 1305,
+        "code": "cancelled",
+        "kl": [
+            {
+                "id": 2507,
+                "name": "08ku",
+                "longname": "Klasse 08ku"
+            }
+        ],
+        "te": [
+            {
+                "id": 111,
+                "name": "Büh",
+                "longname": "Bührig"
+            }
+        ],
+        "su": [
+            {
+                "id": 461,
+                "name": "DS-P",
+                "longname": "DS-Profilunterricht"
+            }
+        ],
+        "ro": [
+            {
+                "id": 515,
+                "name": "N24a",
+                "longname": "DS-Raum"
+            }
+        ],
+        "lsnumber": 353800,
+        "substText": "statt Fr 5/6",
+        "activityType": "Unterricht"
+    },
+    {
+        "id": 2020520,
+        "date": 20240429,
+        "startTime": 935,
+        "endTime": 1020,
+        "kl": [
+            {
+                "id": 2502,
+                "name": "08it",
+                "longname": "Klasse 08it"
+            },
+            {
+                "id": 2507,
+                "name": "08ku",
+                "longname": "Klasse 08ku"
+            }
+        ],
+        "te": [
+            {
+                "id": 101,
+                "name": "Btz",
+                "longname": "Bautz"
+            }
+        ],
+        "su": [
+            {
+                "id": 1671,
+                "name": "WN2",
+                "longname": "WN2"
+            }
+        ],
+        "ro": [
+            {
+                "id": 160,
+                "name": "120",
+                "longname": "120 KR"
+            }
+        ],
+        "lsnumber": 353700,
+        "sg": "WN2_08it08ku_Btz",
+        "activityType": "Unterricht"
+    },
+    {
+        "id": 2020525,
+        "date": 20240429,
+        "startTime": 1025,
+        "endTime": 1110,
+        "kl": [
+            {
+                "id": 2502,
+                "name": "08it",
+                "longname": "Klasse 08it"
+            },
+            {
+                "id": 2507,
+                "name": "08ku",
+                "longname": "Klasse 08ku"
+            }
+        ],
+        "te": [
+            {
+                "id": 101,
+                "name": "Btz",
+                "longname": "Bautz"
+            }
+        ],
+        "su": [
+            {
+                "id": 1671,
+                "name": "WN2",
+                "longname": "WN2"
+            }
+        ],
+        "ro": [
+            {
+                "id": 160,
+                "name": "120",
+                "longname": "120 KR"
+            }
+        ],
+        "lsnumber": 353700,
+        "sg": "WN2_08it08ku_Btz",
+        "activityType": "Unterricht"
+    }
+]

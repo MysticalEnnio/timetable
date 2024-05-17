@@ -47,6 +47,36 @@ const dateShiftNamen = new Map([
     [7, 'In einer Woche'],
 ]);
 
+function getDuplicates(array, key) {
+    const duplicates = [];
+    const seen = new Map();
+
+    for (const obj of array) {
+        const value = obj[key];
+        const existing = seen.get(value);
+        if (existing) {
+            existing.push(obj);
+        } else {
+            seen.set(value, [obj]);
+        }
+    }
+
+    // Filter out entries with only one element (not duplicates)
+    for (const [key, value] of seen.entries()) {
+        if (value.length > 1) {
+            duplicates.push(value);
+        }
+    }
+    return duplicates;
+}
+
+function removeMatchingItems(sourceArray, itemsToRemove) {
+    const filteredArray = sourceArray.filter(
+        (item) => !itemsToRemove.some((removeItem) => removeItem === item)
+    );
+    return filteredArray;
+}
+
 let users = [];
 
 async function messageUserTT(dateShift, scheduled = false, user) {
@@ -54,89 +84,93 @@ async function messageUserTT(dateShift, scheduled = false, user) {
         console.log('Running scheduled task...');
     }
     console.log('Starting to get timetable...');
-    async function sendTT(user) {
-        console.log('Getting timetable for ' + user.user);
-        console.log('QR Code: ' + user.qr);
-        // The result of the scanned QR Code
-        const QRCodeData = user.qr;
-
-        console.log('Generating QR Code for WebUntis...');
-        const untis = new WebUntisQR(
-            QRCodeData,
-            'custom-identity',
-            Authenticator,
-            URL
-        );
-        console.log('QR Code generated');
-        console.log('Logging in...');
-        await untis.login();
-
-        console.log('Logged In');
-
-        console.log('Getting timetable...');
-        const today = new Date();
-        const tomorrow = new Date(today);
-        tomorrow.setDate(tomorrow.getDate() + dateShift);
-        const timetable = await untis.getOwnTimetableFor(tomorrow);
-        console.log('Timetable fetched');
-
+    async function getTT(timetable) {
         const dateShiftName = dateShiftNamen.get(dateShift);
-
         let ausfallNum = 0;
-        timetable.map(async (activity) => {
-            //console.log(activity);
 
+        //check for do8ble bookings by checking if they start at the same time. If they do, remove them both from the array and pass them into an extra function
+        let duplicates = getDuplicates(timetable, 'startTime').flat();
+        timetable = removeMatchingItems(timetable, duplicates);
+
+        //filter out the cancelled
+        duplicates.filter((activity) => {
+            if (activity.code == 'cancelled') {
+                ausfallNum++;
+                //search for replacement(activity.code = irregular)
+                let replacement = duplicates.find(
+                    (activity2) =>
+                        activity2.code == 'irregular' &&
+                        activity2.startTime == activity.startTime
+                );
+                if (replacement) {
+                    let messageString = `${dateShiftName} ${
+                        activity.su[0].longname
+                    } Vertretung in der ${
+                        sjTimes.get(activity.startTime).num
+                    }. Stunde(${
+                        sjTimes.get(activity.startTime).string
+                    }) von Frau/Herr ${replacement.te[0].longname} in ${
+                        replacement.ro[0].longname
+                    }(${replacement.ro[0].name})`;
+                    client.sendMessage(user.user, messageString);
+                    console.log(messageString);
+                } else {
+                    let messageString = `${dateShiftName} ${
+                        activity.su[0].longname
+                    } Ausfall in der ${
+                        sjTimes.get(activity.startTime).num
+                    }. Stunde`;
+                    client.sendMessage(user.user, messageString);
+                    console.log(messageString);
+                }
+            }
+        });
+
+        timetable.map(async (activity) => {
             if (activity.activityType === 'Unterricht') {
                 if (activity.code == 'cancelled') {
                     ausfallNum++;
-                    client.sendMessage(
-                        user.user,
-                        `${dateShiftName} ${
-                            activity.su[0].longname
-                        } Ausfall in der ${
-                            sjTimes.get(activity.startTime).num
-                        }. Stunde`
-                    );
-                    console.log(
-                        `${dateShiftName} ${
-                            activity.su[0].longname
-                        } Ausfall in der ${
-                            sjTimes.get(activity.startTime).num
-                        }. Stunde`
-                    );
+                    let messageString = `${dateShiftName} ${
+                        activity.su[0].longname
+                    } Ausfall in der ${
+                        sjTimes.get(activity.startTime).num
+                    }. Stunde`;
+                    client.sendMessage(user.user, messageString);
+                    console.log(messageString);
                 }
                 if (activity.te[0].orgid) {
                     ausfallNum++;
-                    client.sendMessage(
-                        user.user,
-                        `${dateShiftName} ${
-                            activity.su[0].longname
-                        } Vertretung in der ${
-                            sjTimes.get(activity.startTime).num
-                        }. Stunde(${
-                            sjTimes.get(activity.startTime).string
-                        }) von Frau/Herr ${activity.te[0].longname} in ${
-                            activity.ro[0].longname
-                        }(${activity.ro[0].name})`
-                    );
-
-                    console.log(
-                        `${dateShiftName} ${
-                            activity.su[0].longname
-                        } Vertretung in der ${
-                            sjTimes.get(activity.startTime).num
-                        }. Stunde(${
-                            sjTimes.get(activity.startTime).string
-                        }) von Frau/Herr ${activity.te[0].longname} in ${
-                            activity.ro[0].longname
-                        }(${activity.ro[0].name})`
-                    );
+                    let messageString = `${dateShiftName} ${
+                        activity.su[0].longname
+                    } Vertretung in der ${
+                        sjTimes.get(activity.startTime).num
+                    }. Stunde(${
+                        sjTimes.get(activity.startTime).string
+                    }) von Frau/Herr ${activity.te[0].longname} in ${
+                        activity.ro[0].longname
+                    }(${activity.ro[0].name})`;
+                    client.sendMessage(user.user, messageString);
+                    console.log(messageString);
+                }
+                if (activity.ro[0].orgid) {
+                    ausfallNum++;
+                    let messageString = `${dateShiftName} ${
+                        activity.su[0].longname
+                    } Raumwechsel in der ${
+                        sjTimes.get(activity.startTime).num
+                    }. Stunde(${
+                        sjTimes.get(activity.startTime).string
+                    }) nach Raum ${activity.ro[0].name}(${
+                        activity.ro[0].longname
+                    }) {Vorher Raum ${activity.ro[0].orgname}}`;
+                    client.sendMessage(user.user, messageString);
+                    console.log(messageString);
                 }
             }
         });
         if (ausfallNum == 0) {
-            client.sendMessage(user.user, `${dateShiftName} kein Ausfall`);
             console.log(`${dateShiftName} kein Ausfall`);
+            client.sendMessage(user.user, `${dateShiftName} kein Ausfall`);
         }
     }
     if (user != undefined) {
