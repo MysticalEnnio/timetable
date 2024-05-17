@@ -84,7 +84,7 @@ async function messageUserTT(dateShift, scheduled = false, user) {
         console.log('Running scheduled task...');
     }
     console.log('Starting to get timetable...');
-    async function getTT(timetable) {
+    async function sendTT(timetable) {
         const dateShiftName = dateShiftNamen.get(dateShift);
         let ausfallNum = 0;
 
