@@ -174,6 +174,7 @@ async function messageUserTT(dateShift, scheduled = false, user) {
         }
     }
     if (user != undefined && user.length > 0) {
+        console.log(user);
         sendTT(user);
     } else {
         users.map((e) => sendTT(e));
