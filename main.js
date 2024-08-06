@@ -173,7 +173,7 @@ async function messageUserTT(dateShift, scheduled = false, user) {
             client.sendMessage(user.user, `${dateShiftName} kein Ausfall`);
         }
     }
-    if (user != undefined) {
+    if (user != undefined && user.length > 0) {
         sendTT(user);
     } else {
         users.map((e) => sendTT(e));
